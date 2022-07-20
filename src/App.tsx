@@ -5,10 +5,10 @@ import Box from './Components/Box';
 function App(): JSX.Element {
   const id = useId();
   const numArray: number [] = Array.from({length: 9}, (_, i) => i + 1);
-  const [stop, setStop] = useState(false);
-  const [turn, setTurn] = useState(1);
-  const [board, setBoard] = useState(Array.from({length: 9}, (_, i) => i + 11));
-  const [winner, setWinner] = useState('');
+  const [stop, setStop] = useState<boolean>(false);
+  const [turn, setTurn] = useState<number>(1);
+  const [board, setBoard] = useState<number[]>(Array.from({length: 9}, (_, i) => i + 11));
+  const [winner, setWinner] = useState<string>('');
 
   const checkWinner = (): void => {
     if(board[0] === board[1] && board[1] === board[2]) {

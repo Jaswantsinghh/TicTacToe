@@ -11,8 +11,8 @@ type BoxProps = {
 }
 
 const Box = ({ border, turn, setTurn, stop, board, setBoard}: BoxProps): JSX.Element => {
-    const [val, setVal] = useState('');
-    const [marked, setMarked] = useState(false);
+    const [val, setVal] = useState<string>('');
+    const [marked, setMarked] = useState<boolean>(false);
     const handleClick = (): void => {
         if(!stop && !marked) {
             setVal(turn % 2 === 0 ? '×':'o');
