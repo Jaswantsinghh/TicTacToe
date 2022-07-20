@@ -1,16 +1,16 @@
 import { useState } from 'react';
 import '../Styles/Box.css';
 
-type AppProps = {
+type BoxProps = {
     border: number,
     turn: number,
-    setTurn: Function,
-    stop: Boolean,
+    setTurn: (turn: number) => void,
+    stop: boolean,
     board: number[],
-    setBoard: Function, 
+    setBoard: (arr: number[]) => void, 
 }
 
-const Box = ({ border, turn, setTurn, stop, board, setBoard}: AppProps): JSX.Element => {
+const Box = ({ border, turn, setTurn, stop, board, setBoard}: BoxProps): JSX.Element => {
     const [val, setVal] = useState('');
     const [marked, setMarked] = useState(false);
     const handleClick = (): void => {
